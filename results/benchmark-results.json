@@ -1,0 +1,102 @@
+{
+  "env": {
+    "node": "v24.22.1",
+    "platform": "linux",
+    "arch": "x64",
+    "ops_per_workload": 50000,
+    "capacity": 1000,
+    "iterations": 5,
+    "warmup": 1,
+    "seed": 42,
+    "generated_at": "2026-11-18T15:38:45.892Z"
+  },
+  "workloads": {
+    "sequential-put (50k distinct puts)": {
+      "v1 (array, O(n))": {
+        "mean_ms": 420.31,
+        "min_ms": 391.05,
+        "max_ms": 466.52,
+        "ops_per_sec": 118960,
+        "runs_ms": [
+          413.8,
+          391.05,
+          417.96,
+          412.21,
+          466.52
+        ]
+      },
+      "v2 (Map, O(1))": {
+        "mean_ms": 41.97,
+        "min_ms": 41.17,
+        "max_ms": 44.04,
+        "ops_per_sec": 1191353,
+        "runs_ms": [
+          44.04,
+          41.17,
+          41.65,
+          41.81,
+          41.18
+        ]
+      },
+      "speedup_v2_vs_v1": 10.01
+    },
+    "mixed 70% get / 30% put (2k key space)": {
+      "v1 (array, O(n))": {
+        "mean_ms": 367.58,
+        "min_ms": 324.21,
+        "max_ms": 466.1,
+        "ops_per_sec": 136023,
+        "runs_ms": [
+          340.4,
+          324.21,
+          373.48,
+          333.73,
+          466.1
+        ]
+      },
+      "v2 (Map, O(1))": {
+        "mean_ms": 12.08,
+        "min_ms": 9.05,
+        "max_ms": 15.06,
+        "ops_per_sec": 4138523,
+        "runs_ms": [
+          12.08,
+          15.06,
+          12.4,
+          11.82,
+          9.05
+        ]
+      },
+      "speedup_v2_vs_v1": 30.43
+    },
+    "hot-get (1k prefill + 50k gets on 100 hot keys)": {
+      "v1 (array, O(n))": {
+        "mean_ms": 193.52,
+        "min_ms": 187.27,
+        "max_ms": 198.35,
+        "ops_per_sec": 258377,
+        "runs_ms": [
+          187.27,
+          188.49,
+          197.3,
+          198.35,
+          196.16
+        ]
+      },
+      "v2 (Map, O(1))": {
+        "mean_ms": 8.91,
+        "min_ms": 8.61,
+        "max_ms": 9.14,
+        "ops_per_sec": 5609817,
+        "runs_ms": [
+          9.14,
+          8.71,
+          9.02,
+          9.08,
+          8.61
+        ]
+      },
+      "speedup_v2_vs_v1": 21.72
+    }
+  }
+}
