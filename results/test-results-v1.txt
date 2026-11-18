@@ -1,0 +1,27 @@
+▶ LRUCache v1
+  ✔ 1. get on an empty cache returns undefined and counts a miss (1.717264ms)
+  ✔ 2. put then get returns the value and counts a hit (0.33347ms)
+  ✔ 3. put updates an existing key and refreshes its recency (0.298557ms)
+  ✔ 4. evicts the least-recently-used entry when over capacity (0.231226ms)
+  ✔ 5. get refreshes recency and changes eviction order (2.323723ms)
+  ✔ 6. has does NOT refresh recency (0.298317ms)
+  ✔ 7. delete removes present keys (true) and misses absent ones (false) (0.322023ms)
+  ✔ 8. clear empties the cache and resets stats (0.397216ms)
+  ✔ 9. size tracks entries through puts, evictions and deletes (0.290977ms)
+  ✔ 10. keys() returns keys ordered LRU -> MRU (0.396935ms)
+  ✔ 11. capacity 0 holds nothing; every put is evicted (0.28638ms)
+  ✔ 12. capacity 1 evicts on every new distinct put (3.640989ms)
+  ✔ 13. invalid capacity throws (negative, fractional, string, NaN) (0.849023ms)
+  ✔ 14. stats count hits, misses and evictions over a sequence (0.306119ms)
+  ✔ 15. 1000 puts with capacity 100 keep size at 100 with the right LRU set (5.366125ms)
+  ✔ 16. repeated puts of the same key do not grow the size (3.999275ms)
+  ✔ 17. get on an evicted key returns undefined and does not resurrect it (0.38005ms)
+✔ LRUCache v1 (24.617616ms)
+ℹ tests 17
+ℹ suites 1
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 248.998226

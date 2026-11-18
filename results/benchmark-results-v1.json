@@ -1,0 +1,60 @@
+{
+  "env": {
+    "node": "v24.22.1",
+    "platform": "linux",
+    "arch": "x64",
+    "ops_per_workload": 50000,
+    "capacity": 1000,
+    "iterations": 5,
+    "warmup": 1,
+    "seed": 42,
+    "generated_at": "2026-11-18T15:38:35.527Z"
+  },
+  "workloads": {
+    "sequential-put (50k distinct puts)": {
+      "v1 (array, O(n))": {
+        "mean_ms": 423.27,
+        "min_ms": 401.2,
+        "max_ms": 439.69,
+        "ops_per_sec": 118127,
+        "runs_ms": [
+          439.69,
+          438.88,
+          422.14,
+          414.46,
+          401.2
+        ]
+      }
+    },
+    "mixed 70% get / 30% put (2k key space)": {
+      "v1 (array, O(n))": {
+        "mean_ms": 332.84,
+        "min_ms": 315.85,
+        "max_ms": 356.37,
+        "ops_per_sec": 150223,
+        "runs_ms": [
+          356.37,
+          329.33,
+          331.17,
+          315.85,
+          331.47
+        ]
+      }
+    },
+    "hot-get (1k prefill + 50k gets on 100 hot keys)": {
+      "v1 (array, O(n))": {
+        "mean_ms": 204.07,
+        "min_ms": 192.03,
+        "max_ms": 212.99,
+        "ops_per_sec": 245014,
+        "runs_ms": [
+          209.38,
+          201.87,
+          192.03,
+          204.08,
+          212.99
+        ]
+      }
+    }
+  }
+}
